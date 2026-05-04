@@ -1,0 +1,554 @@
+@import url('./font.css');
+@import url('../Components/style/swiper.css');
+
+:root {
+  --Dark-Purple: #3C1257;
+  --Normal-Purple: #602883;
+  --light-Purple: #9961BC;
+
+  --Dark-Green: #69A152;
+  --Normal-Green: #ACCE55;
+  --light-Green: #FAFAD4;
+
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --shadow-card: 0 8px 24px rgba(0,0,0,0.15);
+  --transition: 0.25s cubic-bezier(0.2, 0.9, 0.4, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, var(--Normal-Purple) 0%, #4a1e6b 100%);
+  min-height: 100vh;
+}
+
+/* ========== MAIN CONTAINER ========== */
+.container {
+  width: 90%;
+  max-width: 1400px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* ---------- Logo ---------- */
+.hero_logo img {
+  height: 42px;
+  width: auto;
+  cursor: pointer;
+  transition: transform var(--transition);
+}
+.hero_logo img:hover {
+  transform: scale(1.05);
+}
+
+/* ---------- Search ---------- */
+.hero_Screach {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  height: 48px;
+  flex: 1;
+  min-width: 280px;
+  max-width: 700px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+}
+
+.catalog {
+  background: var(--Dark-Purple);
+  color: #fff;
+  border: none;
+  padding: 0 18px;
+  height: 100%;
+  cursor: pointer;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  transition: background var(--transition);
+}
+.catalog:hover {
+  background: #4e1a6e;
+}
+
+.Screach {
+  border: none;
+  outline: none;
+  padding: 0 16px;
+  width: 100%;
+  font-size: 15px;
+}
+
+/* ---------- Location ---------- */
+.location_name {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#locationName {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #fff;
+  cursor: pointer;
+  padding: 8px 14px;
+  border-radius: var(--radius-sm);
+  transition: background var(--transition);
+  font-weight: 500;
+}
+#locationName:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.locationIcon {
+  height: 22px;
+  width: 22px;
+}
+
+#heroNext {
+  height: 16px;
+  width: auto;
+  opacity: 0.9;
+}
+
+/* ---------- User / Cart ---------- */
+.hero_user_used {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.menu_user,
+.menu_cart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: var(--radius-sm);
+  transition: background var(--transition);
+  position: relative;
+}
+.menu_user:hover,
+.menu_cart:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.menu_user img,
+.menu_cart img {
+  height: 28px;
+  width: auto;
+}
+
+/* маленький бабл на корзине (если будет) */
+.cart-badge {
+  position: absolute;
+  top: 0;
+  right: -2px;
+  background: var(--Dark-Green);
+  color: #0b1a05;
+  font-size: 11px;
+  font-weight: 700;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--Normal-Purple);
+}
+
+/* ---------- Hidden ---------- */
+.hidden {
+  display: none !important;
+}
+
+/* ========== PAGE ROOT (основной контент) ========== */
+.pageRoot {
+  width: 90%;
+  max-width: 1400px;
+  margin: 20px auto;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(12px);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+/* ---------- Page Tabs ---------- */
+.pageTabs {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+
+.tabBtn {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: var(--radius-sm);
+  padding: 10px 18px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all var(--transition);
+  backdrop-filter: blur(8px);
+}
+.tabBtn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-1px);
+}
+.tabBtn.active {
+  background: var(--Normal-Green);
+  color: #0b1a05;
+  border-color: var(--Normal-Green);
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(172,206,85,0.4);
+}
+
+/* ---------- Page content ---------- */
+.page {
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  color: #fff;
+}
+
+/* ---------- White Card ---------- */
+.cardWhite {
+  background: #ffffff;
+  color: #1a1a1a;
+  border-radius: var(--radius-md);
+  padding: 20px;
+  box-shadow: var(--shadow-card);
+}
+
+/* ---------- Forms ---------- */
+.formRow {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.input {
+  height: 44px;
+  padding: 0 14px;
+  border: 1px solid #ddd;
+  border-radius: var(--radius-sm);
+  outline: none;
+  min-width: 200px;
+  font-size: 14px;
+  transition: border var(--transition), box-shadow var(--transition);
+}
+.input:focus {
+  border-color: var(--Normal-Purple);
+  box-shadow: 0 0 0 3px rgba(96,40,131,0.2);
+}
+
+/* ---------- Buttons ---------- */
+.primaryBtn {
+  height: 44px;
+  padding: 0 20px;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  background: var(--Dark-Green);
+  color: #0b1a05;
+  font-weight: 700;
+  font-size: 15px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all var(--transition);
+  box-shadow: 0 4px 10px rgba(105,161,82,0.4);
+}
+.primaryBtn:hover {
+  background: #7dbd5f;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(105,161,82,0.5);
+}
+
+.dangerBtn {
+  height: 44px;
+  padding: 0 20px;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  background: #dc3545;
+  color: #fff;
+  font-weight: 700;
+  font-size: 15px;
+  transition: all var(--transition);
+}
+.dangerBtn:hover {
+  background: #c82333;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(220,53,69,0.5);
+}
+
+/* ---------- Muted ---------- */
+.muted {
+  opacity: 0.8;
+}
+
+/* ========== PRODUCT CARDS ========== */
+.card {
+  background: #fff;
+  color: #222;
+  border-radius: var(--radius-md);
+  width: 260px;
+  padding: 0 0 14px 0;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  transition: transform var(--transition), box-shadow var(--transition);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 25px 40px rgba(0,0,0,0.2);
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 12px 14px 10px;
+  flex: 1;
+}
+
+.card-title {
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 6px;
+  color: var(--Dark-Purple);
+}
+
+.card-price {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--Normal-Green);
+  margin: 6px 0;
+}
+
+.card-desc {
+  font-size: 13px;
+  color: #555;
+  margin-bottom: 12px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+#Product {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* ---------- Quantity controls ---------- */
+.controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin: 10px 0;
+}
+
+.controls button {
+  background: var(--Normal-Green);
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 700;
+  color: #0b1a05;
+  transition: background var(--transition);
+}
+.controls button:hover {
+  background: #bfda6d;
+}
+
+.qtyInput {
+  width: 70px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 8px;
+  font-weight: 600;
+}
+
+/* ---------- Add to cart ---------- */
+.btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: var(--radius-sm);
+  background: var(--Normal-Purple);
+  color: white;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 15px;
+  transition: background var(--transition), transform 0.1s;
+}
+.btn:hover {
+  background: #7a3ba3;
+}
+.btn:active {
+  transform: scale(0.97);
+}
+
+#orderBtn {
+  margin-top: 24px;
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: var(--radius-sm);
+  background: var(--Dark-Purple);
+  color: white;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background var(--transition);
+  box-shadow: 0 8px 20px rgba(60,18,87,0.4);
+}
+#orderBtn:hover {
+  background: #4e1a6e;
+}
+
+/* ---------- Notification ---------- */
+#notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #1f1f1f;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: var(--radius-sm);
+  z-index: 1002;
+  display: none;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+  animation: slideIn 0.3s ease;
+  border-left: 4px solid var(--Normal-Green);
+}
+
+@keyframes slideIn {
+  from { transform: translateX(120px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+/* ========== RESPONSIVE BREAKPOINTS ========== */
+
+/* Планшеты (ширина до 1024px) */
+@media (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .hero_Screach {
+    max-width: 100%;
+  }
+  .hero_user_used {
+    justify-content: flex-end;
+  }
+  .card {
+    width: 220px;
+  }
+}
+
+/* Мобильные (ширина до 768px) */
+@media (max-width: 768px) {
+  .container {
+    padding: 10px 12px;
+  }
+  .hero_logo img {
+    height: 34px;
+  }
+  .hero_Screach {
+    height: 42px;
+  }
+  .catalog {
+    padding: 0 12px;
+    font-size: 14px;
+  }
+  .Screach {
+    font-size: 14px;
+  }
+  .location_name {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+  }
+  .hero_user_used {
+    gap: 4px;
+  }
+  .menu_user img,
+  .menu_cart img {
+    height: 24px;
+  }
+
+  .pageRoot {
+    padding: 14px;
+    width: 95%;
+  }
+
+  .tabBtn {
+    padding: 8px 14px;
+    font-size: 14px;
+  }
+
+  .card {
+    width: 44%;
+    min-width: 150px;
+  }
+
+  .formRow {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .input {
+    width: 100%;
+  }
+}
+
+/* Очень маленькие экраны (до 480px) */
+@media (max-width: 480px) {
+  .hero_Screach {
+    height: 40px;
+  }
+  .catalog {
+    font-size: 13px;
+    padding: 0 10px;
+  }
+  #locationName {
+    font-size: 14px;
+    gap: 4px;
+  }
+  .card {
+    width: 100%;
+    max-width: 280px;
+  }
+  .primaryBtn, .dangerBtn {
+    width: 100%;
+    justify-content: center;
+  }
+}

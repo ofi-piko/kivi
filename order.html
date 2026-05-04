@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Оформление заказа</title>
+  </head>
+  <body>
+    <main class="orderPage">
+      <div class="orderCard">
+        <a class="backLink" href="/index.html">← назад в магазин</a>
+
+        <h1 class="title">Оформление заказа</h1>
+
+        <section class="section">
+          <h2 class="sectionTitle">Корзина</h2>
+          <div id="orderCartEmpty" class="muted">Корзина пуста</div>
+          <div id="orderCart" class="cartList"></div>
+          <div class="totalRow">
+            <span>Итого</span>
+            <strong><span id="orderTotal">0</span> сум</strong>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="sectionTitle">Данные</h2>
+          <div id="authRequiredMessage" class="hint muted"></div>
+
+          <label class="field">
+            <span class="label">Имя</span>
+            <input id="customerName" class="input" placeholder="Ваше имя" autocomplete="name" />
+          </label>
+
+          <div class="field">
+            <span class="label">Телефон</span>
+            <div class="phoneWrap" aria-label="phone">
+              <span class="phonePrefix" aria-hidden="true">+998</span>
+              <input
+                id="customerPhone"
+                class="input phoneInput"
+                inputmode="numeric"
+                placeholder="90 123 45 67"
+                autocomplete="tel-national"
+              />
+            </div>
+            <div class="hint muted">Префикс <strong>+998</strong> фиксированный.</div>
+          </div>
+
+          <div class="field">
+            <span class="label">Адрес доставки / локация</span>
+            <textarea id="deliveryAddress" class="input" placeholder="Улица, дом, ориентир или отправьте GPS ниже"></textarea>
+            <button id="useGeoBtn" class="primaryBtn" type="button" style="margin-top: 8px;">Использовать геолокацию</button>
+            <div class="hint muted">Можно ввести адрес вручную или отправить GPS координаты.</div>
+          </div>
+
+          <label class="field">
+            <span class="label">QR-код оплаты (скриншот)</span>
+            <input id="paymentQr" class="input" type="file" accept="image/*" />
+            <div class="hint muted">После оплаты по карте прикрепите QR/чек. Админ проверит и подтвердит либо отклонит.</div>
+          </label>
+
+          <button id="sendOrderBtn" class="primaryBtn">Отправить в Telegram</button>
+          <div id="orderStatus" class="status muted"></div>
+        </section>
+      </div>
+    </main>
+
+    <script type="module" src="/src/order/order.js"></script>
+  </body>
+</html>

@@ -1,0 +1,171 @@
+@import url('../style/font.css');
+
+:root {
+  --Dark-Purple: #3C1257;
+  --Normal-Purple: #602883;
+  --light-Purple: #9961BC;
+
+  --Dark-Green: #69A152;
+  --Normal-Green: #ACCE55;
+  --light-Green: #FAFAD4;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  margin: 0;
+  background: var(--Normal-Purple);
+  color: #fff;
+}
+
+.orderPage {
+  min-height: 100dvh;
+  display: grid;
+  place-items: start center;
+  padding: 18px;
+}
+
+.orderCard {
+  width: min(860px, 100%);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  padding: 16px;
+}
+
+.backLink {
+  color: #fff;
+  opacity: 0.9;
+  text-decoration: none;
+}
+
+.title {
+  margin: 12px 0 16px;
+  font-size: 26px;
+}
+
+.section {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 14px;
+  margin-top: 12px;
+}
+
+.sectionTitle {
+  margin: 0 0 10px;
+  font-size: 18px;
+}
+
+.muted {
+  opacity: 0.85;
+}
+
+.hidden {
+  display: none;
+}
+
+.cartList {
+  display: grid;
+  gap: 8px;
+}
+
+.cartItem {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 12px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+}
+
+.cartItemName {
+  font-weight: 700;
+  text-transform: lowercase;
+}
+
+.cartItemMeta {
+  opacity: 0.9;
+  font-size: 13px;
+}
+
+.totalRow {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.field {
+  display: grid;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.label {
+  font-size: 13px;
+  opacity: 0.9;
+}
+
+.input {
+  height: 42px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  padding: 0 12px;
+  outline: none;
+}
+
+.input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.phoneWrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.phonePrefix {
+  height: 42px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.14);
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+.phoneInput {
+  flex: 1;
+}
+
+.hint {
+  font-size: 12px;
+}
+
+.primaryBtn {
+  margin-top: 12px;
+  height: 42px;
+  border: none;
+  border-radius: 12px;
+  padding: 0 14px;
+  cursor: pointer;
+  background: var(--Dark-Green);
+  color: #0b1a05;
+  font-weight: 800;
+}
+
+.status {
+  margin-top: 10px;
+  min-height: 18px;
+  font-size: 13px;
+}
+

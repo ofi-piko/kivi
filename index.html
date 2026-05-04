@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2family=Poppins:wght@800&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>kivi</title>
+</head>
+
+<body>
+  <div class="hidden" id="menubar">
+    catalog
+  </div>
+  <header>
+    <div class="container">
+      <div class="hero_logo">
+        <img src="./public/Images/icon/logo.png" alt="">
+      </div>
+
+      <div class="hero_center">
+        <div class="hero_Screach">
+          <button class="catalog" id="catalog">Каталог</button>
+          <input class="Screach" type="text" placeholder="Поиск">
+        </div>
+      </div>
+
+      <div class="hero_menu">
+        <div class="location_name">
+          <div id="locationName">
+            <img class="locationIcon" src="./public/icon/location.png" alt="">
+            City name
+            <img id="heroNext" src="./public/icon/next.png" alt="">
+          </div>
+        </div>
+      </div>
+
+      <div class="hero_user_used">
+        <div class="menu_cart" id="navCart" title="Корзина">
+          <img src="./public/icon/cart.png" alt="">
+        </div>
+        <div class="menu_user" id="navUser" title="Профиль">
+          <img src="./public/icon/user.png" alt="">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="pageRoot" class="pageRoot hidden">
+      <section id="pageCart" class="page hidden"></section>
+      <section id="pageUser" class="page hidden"></section>
+      <section id="pageAdmin" class="page hidden"></section>
+    </section>
+
+    <section class="Swiper">
+      <div id="Swiper">
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide"><img src="./public/Images/img/shop.webp"></div>
+            <div class="swiper-slide"><img src="./public/Images/img/shop2.jpg"></div>
+            <div class="swiper-slide"><img src="./public/Images/img/shop3.webp"></div>
+            <div class="swiper-slide"><img src="./public/Images/img/shop4.jpg"></div>
+            <div class="swiper-slide"><img src="./public/Images/img/shop5.webp"></div>
+          </div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section>
+    <section id="Product">
+      <article class="card" data-id="1">
+        <h3>🥤 Monster White Zero Sugar</h3>
+        <p>Освежающий вкус без сахара</p>
+        <span class="price">25000</span>
+        <div class="controls">
+          <button class="qtyMinus" type="button">−</button>
+          <input class="qtyInput" type="number" value="1" min="1" step="1" />
+          <button class="qtyPlus" type="button">+</button>
+        </div>
+        <button class="btn">Добавить в корзину</button>
+      </article>
+
+      <article class="card" data-id="2">
+        <h3>🐟 Лосось свежий</h3>
+        <p>Нежный лосось, цена за 1 кг</p>
+        <span class="price">75000</span>
+        <div class="controls">
+          <button class="qtyMinus" type="button">−</button>
+          <input class="qtyInput" type="number" value="0.5" min="0.5" step="0.5" />
+          <button class="qtyPlus" type="button">+</button>
+        </div>
+        <button class="btn">Добавить в корзину</button>
+      </article>
+
+      <article class="card" data-id="3">
+        <h3>🍵 Чай Greenfield</h3>
+        <p>Ароматный чай для дома и офиса</p>
+        <span class="price">15000</span>
+        <div class="controls">
+          <button class="qtyMinus" type="button">−</button>
+          <input class="qtyInput" type="number" value="1" min="1" step="1" />
+          <button class="qtyPlus" type="button">+</button>
+        </div>
+        <button class="btn">Добавить в корзину</button>
+      </article>
+    </section>
+  </main>
+
+  <script type="module" src="/src/script/main.js"></script>
+</body>
+
+</html>
