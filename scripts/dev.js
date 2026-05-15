@@ -18,5 +18,5 @@ function run(cmd, args, name, extraEnv = {}) {
 }
 
 run("node", ["server/index.js"], "server", { PORT: "5176" });
-run("vite", [], "vite");
+run("vite", ["--port", "5173"], "vite");
 
