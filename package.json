@@ -8,6 +8,7 @@
     "dev:full": "node scripts/dev.js",
     "server": "node server/index.js",
     "build": "vite build",
+    "vercel-build": "npm run build",
     "preview": "vite preview"
   },
   "devDependencies": {
